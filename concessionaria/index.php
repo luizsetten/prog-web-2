@@ -9,6 +9,7 @@
 <body>
     <div class="container my-3 ">
         <?php include "cabeçalho.php"; ?>
+        <?php include "./utils/mysql_connect.php"; ?>
 
         <?php include "navbar.php"; ?>
 
