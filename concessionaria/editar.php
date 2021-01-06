@@ -6,35 +6,17 @@
     <title>Concessionária - Gerenciamento de Veículos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://unpkg.com/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
-    <script src="js/cadastro.js" defer></script>
+    <script src="js/editar.js"></script>
 </head>
 <body>
     <div class="container my-3 ">
-        <div class="jumbotron mb-3">
-            <h1>Logo da Concessionária</h1>
-        </div>
+    <?php 
+            include "cabeçalho.php";
+        ?>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="listagem.html">Listagem</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="cadastro.html">Cadastro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sobre.html">Sobre</a>
-                  </li>
-              </ul>
-            </div>
-          </nav>
+        <?php 
+            include "navbar.php";
+        ?>
 
         <form id="formVeiculo" method="POST" class="row">
             <div class="form-group col-md-6">
@@ -84,7 +66,7 @@
             </div>
             <div class="form-group col-md-12 text-right">
                 <button class="btn btn-primary">
-                    Cadastrar Veículo
+                    Salvar Veículo
                 </button>
                 <button type="reset" class="btn btn-secondary">
                     Limpar
@@ -92,9 +74,7 @@
             </div>
         </form>
         <hr>
-        <footer class="mb-5">
-            <p>&copy; Instituto Federal do Sul de Minas Gerais – IFSULDEMINAS | Campus Poços de Caldas, MG.</p>
-        </footer>
+        <?php include "footer.php" ?>
     </div>
     
 </body>

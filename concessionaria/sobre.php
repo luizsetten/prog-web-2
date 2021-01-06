@@ -8,31 +8,13 @@
 </head>
 <body>
     <div class="container my-3 ">
-        <div class="jumbotron mb-3">
-            <h1>Logo da Concessionária</h1>
-        </div>
+        <?php 
+            include "cabeçalho.php";
+        ?>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="listagem.html">Listagem</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastro.html">Cadastro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sobre.html">Sobre</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <?php 
+            include "navbar.php";
+        ?>
 
         <section class="card">
             <header class="card-header p-3">
@@ -54,9 +36,7 @@
         </section>
 
         <hr>
-        <footer class="mb-5">
-            <p>&copy; Instituto Federal do Sul de Minas Gerais – IFSULDEMINAS | Campus Poços de Caldas, MG.</p>
-        </footer>
+        <?php include "footer.php" ?>
     </div>
     
 </body>
