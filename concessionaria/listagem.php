@@ -30,11 +30,12 @@
                 //$dados = mysqli_query($con, $query2) or die(mysqli_error($con));
                 $dados = mysqli_query($con, $query) or die(mysqli_error($con));
                 // // transforma os dados em um array
-                $linha = mysqli_fetch_assoc($dados);
                 // // calcula quantos dados retornaram
                 $total = mysqli_num_rows($dados);
-
+                
                 for($i = 0; $i < $total; $i++){
+                    $linha = mysqli_fetch_assoc($dados);
+                    // echo '<pre>'; print_r($linha); echo '</pre>';
                     $id=$linha['id'];
                     $marca=$linha['marca'];
                     $preco=$linha['preco'];
@@ -61,7 +62,7 @@
                                 $descricao
                             </p>
                             <p class="text-right">
-                                <a href="editar.php/?id=$id" class="btn btn-primary">Editar</a> //Inserir id aqui
+                                <a href="editar.php/id=$id" class="btn btn-primary">Editar</a> //Inserir id aqui
                                 <a href="#" class="btn btn-danger">Excluir</a> //Inserir id aqui ou fazer um metodo para remover
                             </p>
                         </div>
