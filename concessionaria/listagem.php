@@ -35,6 +35,7 @@
                 $total = mysqli_num_rows($dados);
 
                 for($i = 0; $i < $total; $i++){
+                    $id=$linha['id'];
                     $marca=$linha['marca'];
                     $preco=$linha['preco'];
                     $cor=$linha['cor'];
@@ -60,7 +61,7 @@
                                 $descricao
                             </p>
                             <p class="text-right">
-                                <a href="editar.php" class="btn btn-primary">Editar</a> //Inserir id aqui
+                                <a href="editar.php/?id=$id" class="btn btn-primary">Editar</a> //Inserir id aqui
                                 <a href="#" class="btn btn-danger">Excluir</a> //Inserir id aqui ou fazer um metodo para remover
                             </p>
                         </div>
