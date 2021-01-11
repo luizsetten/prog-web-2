@@ -25,6 +25,14 @@
                 <h2>Veja os nossos veículos</h2>
             </header>
             <?php
+                if(!isset($_POST['id']) && !empty($_POST['id'])) {
+                    $idDelete = $_POST['id'];
+                    $queryDelete = sprintf("DELETE FROM carros WHERE id=$idDelete");
+                    $removed = mysqli_query($con, $queryDelete) or die(mysqli_error($con));
+                    print($removed);
+                    return;
+                }
+              
                 $query = sprintf("SELECT * FROM carros"); //Não retorna nada pq o banco ta vazio
                 $query2 = sprintf("INSERT INTO carros (id, marca, modelo, ano, preco, foto, cor, descricao) VALUES ('3','Chevrolet', 'Onix', 2018, 45000.00, 'teste.png', 'Branco', 'Muito top')");
                 //$dados = mysqli_query($con, $query2) or die(mysqli_error($con));
@@ -62,8 +70,11 @@
                                 $descricao
                             </p>
                             <p class="text-right">
-                                <a href="editar.php/id=$id" class="btn btn-primary">Editar</a> //Inserir id aqui
-                                <a href="#" class="btn btn-danger">Excluir</a> //Inserir id aqui ou fazer um metodo para remover
+                            <form action="" class="container" method="post">
+                            <a href="editar.php?id=$id" class="btn btn-primary">Editar</a> //Inserir id aqui
+                                <input id="$id" name="id" type="hidden" value="$id">
+                                <button type="submit" class="btn btn-danger">Excluir</button> //Inserir id aqui ou fazer um metodo para remover
+                            </form>
                             </p>
                         </div>
                         </div>
