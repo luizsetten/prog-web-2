@@ -69,17 +69,14 @@
                             <p>
                                 $descricao
                             </p>
-                            <p class="text-right">
-                            <form action="editar.php" class="container text-right" method="post">
+                            <form action="editar.php" class="container" method="post">
                                 <input id="$id" name="id" type="hidden" value="$id">
                                 <button type="submit" class="btn btn-primary">Editar</button>
-                          
                             </form>
-                                <form action="excluir.php" class="container text-right" method="post">
+                            <form action="delete.php" class="container" method="post">
                                 <input id="$id" name="id" type="hidden" value="$id">
                                 <button type="submit" class="btn btn-danger">Excluir</button>
                             </form>
-                            </p>
                         </div>
                         </div>
                         </div>
