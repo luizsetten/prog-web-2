@@ -70,10 +70,14 @@
                                 $descricao
                             </p>
                             <p class="text-right">
-                            <form action="" class="container" method="post">
-                            <a href="editar.php?id=$id" class="btn btn-primary">Editar</a> //Inserir id aqui
+                            <form action="editar.php" class="container text-right" method="post">
                                 <input id="$id" name="id" type="hidden" value="$id">
-                                <button type="submit" class="btn btn-danger">Excluir</button> //Inserir id aqui ou fazer um metodo para remover
+                                <button type="submit" class="btn btn-primary">Editar</button>
+                          
+                            </form>
+                                <form action="excluir.php" class="container text-right" method="post">
+                                <input id="$id" name="id" type="hidden" value="$id">
+                                <button type="submit" class="btn btn-danger">Excluir</button>
                             </form>
                             </p>
                         </div>
