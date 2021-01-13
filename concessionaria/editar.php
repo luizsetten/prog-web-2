@@ -18,6 +18,17 @@
             include "navbar.php";
         ?>
 
+        <?php 
+            include "./utils/mysql_connect.php";
+        ?>
+
+        <?php
+            $id = $_POST['id'];
+            $query = sprintf("SELECT * FROM carros WHERE id=$id"); 
+            $dados = mysqli_query($con, $query) or die(mysqli_error($con));
+            echo '<pre>'; print_r($dados); echo'</pre>';
+        ?>
+
         <form id="formVeiculo" method="POST" class="row">
             <div class="form-group col-md-6">
                 <label>Marca:</label>
