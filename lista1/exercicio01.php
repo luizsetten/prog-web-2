@@ -24,7 +24,7 @@
         return;
       }
       $x = $_POST['numero'] ?? 0;
-      print'<h3 class="container">';
+      print'<div class="container alert alert-primary">';
       print 'O número ';
       print($x);
       if($x > 0) {
@@ -34,7 +34,7 @@
       } else {
         print ' é igual a zero.';
       }
-      print'</h3>';
+      print'</div>';
     ?>
 </body>
 </html>
