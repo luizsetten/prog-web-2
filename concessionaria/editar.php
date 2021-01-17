@@ -27,6 +27,9 @@
             $query = sprintf("SELECT * FROM carros WHERE id=$id"); 
             $dados = mysqli_query($con, $query) or die(mysqli_error($con));
             echo '<pre>'; print_r($dados); echo'</pre>';
+            $teste = mysqli_result($dados);
+            echo '<pre>'; print_r($teste); echo'</pre>';
+
         ?>
 
         <form id="formVeiculo" method="POST" class="row">
