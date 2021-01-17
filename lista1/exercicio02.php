@@ -23,34 +23,38 @@
     </form>
     <div class="container">
         <table class="table table-striped">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead class="table-dark">
-                        Tabuada do número
+            <?php
+            if (!isset($_GET['numero']) || empty($_GET['numero'])) {
+                return;
+            }
+            ?>
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <th scope="col"> Tabuada do número
                         <?php $x = $_GET['numero'] ?? 0;
                         echo ($x); ?>
-                    </thead>
-                    <tbody>
-                        <?php
-                        for ($i = 1; $i <= 10; $i++) {
-                        ?>
-                            <tr class="table-active">
-                                <td>
-                                    <?php
-                                    print($x);
-                                    print 'x';
-                                    print($i);
-                                    print '=';
-                                    print($i * $x);
-                                    ?>
-                                <td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
-                <div>
+                    </th>
+                </thead>
+                <tbody>
+                    <?php
+                    for ($i = 1; $i <= 10; $i++) {
+                    ?>
+                        <tr>
+                            <td>
+                                <?php
+                                print($x);
+                                print ' x ';
+                                print($i);
+                                print ' = ';
+                                print($i * $x);
+                                ?>
+                            <td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
         </table>
     </div>
 </body>
