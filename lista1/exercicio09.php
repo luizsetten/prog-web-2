@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body><?php include "header.php" ?>
   <form action="" class="container" method="GET">
     <div class="form-group">
       <label for="quantidade">Quantidade de combustível (L):</label>

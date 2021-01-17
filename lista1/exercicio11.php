@@ -11,7 +11,7 @@
 
 </head>
 
-<body>
+<body><?php include "header.php" ?>
     <form action="" class="container" method="POST">
         <div class="form-group">
             <label for="nome">Nome:</label>

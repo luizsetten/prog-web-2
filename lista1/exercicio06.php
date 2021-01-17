@@ -11,7 +11,7 @@
 
 </head>
 
-<body>
+<body><?php include "header.php" ?>
     <form action="" class="container" method="GET">
         <div class="form-group">
             <label for="nota1">Nota 1:</label>
