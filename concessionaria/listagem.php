@@ -68,13 +68,13 @@
                             <div class="row justify-content-end">
                                 <div class="col-xs">
                                     <form action="editar.php" class="container" method="post">
-                                        <input id="<?php print($id); ?>" name="id" type="hidden" value="<?php print($id); ?>">
+                                        <input id="<?php echo $id; ?>" name="id" type="hidden" value="<?php echo $id; ?>">
                                         <button type="submit" class="btn btn-primary">Editar</button>
                                     </form>
                                 </div>
                                 <div class="col-xs">
                                     <form action="delete.php" class="container" method="post">
-                                        <input id="<?php print($id); ?>" name="id" type="hidden" value="<?php print($id); ?>">
+                                        <input id="<?php echo $id; ?>" name="id" type="hidden" value="<?php echo $id; ?>">
                                         <button type="submit" class="btn btn-danger">Excluir</button>
                                     </form>
                                 </div>

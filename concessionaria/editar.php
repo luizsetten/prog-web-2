@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +9,33 @@
     <script src="https://unpkg.com/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
     <script src="js/editar.js"></script>
 </head>
+
 <body>
     <div class="container my-3 ">
-    <?php 
-            include "cabeçalho.php";
-        ?>
-
-        <?php 
-            include "navbar.php";
-        ?>
-
-        <?php 
-            include "./utils/mysql_connect.php";
+        <?php
+        include "cabeçalho.php";
         ?>
 
         <?php
-            $id = $_POST['id'];
-            $query = sprintf("SELECT * FROM carros WHERE id=$id"); 
-            $dados = mysqli_query($con, $query) or die(mysqli_error($con));
-            echo '<pre>'; print_r($dados); echo'</pre>';
-            $teste = mysqli_result($dados);
-            echo '<pre>'; print_r($teste); echo'</pre>';
+        include "navbar.php";
+        ?>
+
+        <?php
+        include "./utils/mysql_connect.php";
+        ?>
+
+        <?php
+        $id = $_POST['id'];
+        echo $id;
+        $query = sprintf("SELECT * FROM carros WHERE id=$id");
+        $dados = mysqli_query($con, $query) or die(mysqli_error($con));
+        echo '<pre>';
+        print_r($dados);
+        echo '</pre>';
+        $teste = mysqli_result($dados);
+        echo '<pre>';
+        print_r($teste);
+        echo '</pre>';
 
         ?>
 
@@ -90,6 +97,7 @@
         <hr>
         <?php include "footer.php" ?>
     </div>
-    
+
 </body>
+
 </html>
