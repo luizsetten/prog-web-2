@@ -37,9 +37,9 @@
 
             for ($i = 0; $i < $total; $i++) {
                 $linha = mysqli_fetch_assoc($dados);
-                echo '<pre>';
-                print_r($linha);
-                echo '</pre>';
+                // echo '<pre>';
+                // print_r($linha);
+                // echo '</pre>';
                 $id = $linha['id'];
                 $marca = $linha['marca'];
                 $preco = $linha['preco'];
@@ -73,7 +73,7 @@
                                     </form>
                                 </div>
                                 <div class="col-xs">
-                                    <form action="delete.php" class="container" method="post">
+                                    <form action="./utils/delete.php" class="container" method="post">
                                         <input id="<?php echo $id; ?>" name="id" type="hidden" value="<?php echo $id; ?>">
                                         <button type="submit" class="btn btn-danger">Excluir</button>
                                     </form>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,18 @@
     <script src="https://unpkg.com/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
     <script src="js/cadastro.js" defer></script>
 </head>
+
 <body>
     <div class="container my-3 ">
-    <?php 
-            include "cabeçalho.php";
+        <?php
+        include "cabeçalho.php";
         ?>
 
-        <?php 
-            include "navbar.php";
+        <?php
+        include "navbar.php";
         ?>
 
-        <form id="formVeiculo" method="POST" class="row">
+        <form id="formVeiculo" method="POST" action="./utils/store.php" class="row">
             <div class="form-group col-md-6">
                 <label>Marca:</label>
                 <select id="marca" class="form-control custom-select">
@@ -76,6 +78,7 @@
         <hr>
         <?php include "footer.php" ?>
     </div>
-    
+
 </body>
+
 </html>
