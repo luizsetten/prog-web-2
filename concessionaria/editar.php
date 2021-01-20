@@ -40,7 +40,8 @@
 
         ?>
 
-        <form id="formVeiculo" method="POST" class="row">
+        <form id="formVeiculo" method="POST" action="utils/update.php" class="row">
+            <input type="hidden" id="id" value=<?= $teste->id ?>>
             <div class="form-group col-md-6">
                 <label>Marca:</label>
                 <select id="marca" class="form-control custom-select">
