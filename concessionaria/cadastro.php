@@ -19,8 +19,8 @@
         <?php
         include "navbar.php";
         ?>
-
-        <form id="formVeiculo" method="POST" action="./utils/store.php" class="row">
+        <!-- action="./utils/store.php" -->
+        <form id="formVeiculo" method="POST" class="row">
             <div class="form-group col-md-6">
                 <label>Marca:</label>
                 <select id="marca" class="form-control custom-select">
