@@ -4,7 +4,7 @@ const inputPreco = form.querySelector('input#preco');
 
 // Aplicamos as máscaras
 VMasker(inputAno).maskPattern('9999');
-VMasker(inputPreco).maskMoney();
+// VMasker(inputPreco).maskMoney();
 
 // quando o formulário for submetido
 form.addEventListener('submit', () => {
@@ -23,6 +23,7 @@ function validarCampos(...campos)
 {
     let status = true;
     const corrigeNumero = function(valor) {
+        console.log(valor)
         return Number(valor.replaceAll('.', '').replaceAll(',', '.'));
     }
 

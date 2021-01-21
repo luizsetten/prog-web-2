@@ -26,17 +26,17 @@
 
         <?php
         $id = $_POST['id'];
-        echo $id;
+        // echo $id;
         $query = sprintf("SELECT * FROM carros WHERE id=$id");
         $dados = mysqli_query($con, $query) or die(mysqli_error($con));
-        echo '<pre>';
-        print_r($dados);
-        echo '</pre>';
+        // echo '<pre>';
+        // print_r($dados);
+        // echo '</pre>';
         $teste = mysqli_fetch_object($dados);
-        echo '<pre>';
-        print_r($teste);
-        echo '</pre>';
-        echo $teste->preco;
+        // echo '<pre>';
+        // print_r($teste);
+        // echo '</pre>';
+        // echo $teste->preco;
 
         ?>
 
@@ -64,7 +64,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label>Preço:</label>
-                <input type="text" name="preco" id="preco" class="form-control" value="<?= ($teste->preco * 100) ?>" placeholder="Insira o preço do modelo">
+                <input type="text" step="0.01" name="preco" id="preco" class="form-control" value="<?= floatval($teste->preco) ?>" placeholder="Insira o preço do modelo">
                 <div class="alert-danger w-100 p-2 d-none">Preço inválido</div>
             </div>
             <div class="form-group col-md-6">
