@@ -28,7 +28,6 @@
             }
 
             $query = sprintf("SELECT * FROM carros"); //Não retorna nada pq o banco ta vazio
-            $query2 = sprintf("INSERT INTO carros (id, marca, modelo, ano, preco, foto, cor, descricao) VALUES ('3','Chevrolet', 'Onix', 2018, 45000.00, 'teste.png', 'Branco', 'Muito top')");
             //$dados = mysqli_query($con, $query2) or die(mysqli_error($con));
             $dados = mysqli_query($con, $query) or die(mysqli_error($con));
             $total = mysqli_num_rows($dados);

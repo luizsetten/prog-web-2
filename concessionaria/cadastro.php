@@ -19,11 +19,10 @@
         <?php
         include "navbar.php";
         ?>
-        <!-- action="./utils/store.php" -->
-        <form id="formVeiculo" method="POST" class="row">
+        <form id="formVeiculo" method="POST" action="./utils/store.php" class="row">
             <div class="form-group col-md-6">
                 <label>Marca:</label>
-                <select id="marca" class="form-control custom-select">
+                <select id="marca" name="marca" class="form-control custom-select">
                     <option value="">-- Selecionar --</option>
                     <option value="Chevrolet">Chevrolet</option>
                     <option value="Ford">Ford</option>
@@ -33,26 +32,26 @@
             </div>
             <div class="form-group col-md-6">
                 <label>Modelo:</label>
-                <input type="text" id="modelo" class="form-control" value="" placeholder="Insira o nome do modelo">
+                <input type="text" id="modelo" name="modelo" class="form-control" value="" placeholder="Insira o nome do modelo">
                 <div class="alert-danger w-100 p-2 d-none">Modelo inválido</div>
             </div>
             <div class="form-group col-md-6">
                 <label>Ano:</label>
-                <input type="number" id="ano" class="form-control" value="" placeholder="Insira o ano do modelo">
+                <input type="number" id="ano" name="ano" class="form-control" value="" placeholder="Insira o ano do modelo">
                 <div class="alert-danger w-100 p-2 d-none">Ano inválido</div>
             </div>
             <div class="form-group col-md-6">
                 <label>Preço:</label>
-                <input type="text" id="preco" class="form-control" value="" placeholder="Insira o preço do modelo">
+                <input type="text" id="preco" name="preco" class="form-control" value="" placeholder="Insira o preço do modelo">
                 <div class="alert-danger w-100 p-2 d-none">Preço inválido</div>
             </div>
             <div class="form-group col-md-6">
                 <label>Foto:</label>
-                <input type="text" id="foto" class="form-control" value="" placeholder="Insira o nome da foto">
+                <input type="text" id="foto" name="foto" class="form-control" value="" placeholder="Insira o nome da foto">
             </div>
             <div class="form-group col-md-6">
                 <label>Cor:</label>
-                <select id="cor" class="form-control custom-select">
+                <select id="cor" name="cor" class="form-control custom-select">
                     <option value="">-- Selecionar --</option>
                     <option value="Preto">Preto</option>
                     <option value="Branco">Branco</option>
@@ -63,7 +62,7 @@
             </div>
             <div class="form-group col-md-12">
                 <label>Descrição:</label>
-                <textarea class="form-control" id="descricao" rows="10" placeholder="Insira a descrição do veículo"></textarea>
+                <textarea class="form-control" id="descricao" name="descricao" rows="10" placeholder="Insira a descrição do veículo"></textarea>
                 <div class="alert-danger w-100 p-2 d-none">Descrição é obrigatório</div>
             </div>
             <div class="form-group col-md-12 text-right">
