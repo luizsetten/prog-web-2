@@ -4,7 +4,7 @@ const inputPreco = form.querySelector('input#preco');
 
 // Aplicamos as máscaras
 VMasker(inputAno).maskPattern('9999');
-// VMasker(inputPreco).maskMoney();
+VMasker(inputPreco).maskMoney();
 
 // quando o formulário for submetido
 form.addEventListener('submit', () => {
@@ -15,6 +15,7 @@ form.addEventListener('submit', () => {
     const inputDescricao = form.querySelector('#descricao');
 
     if (validarCampos(inputMarca, inputModelo, inputAno, inputPreco, inputCor, inputDescricao)) {
+        inputPreco.value = Number(inputPreco.value.replaceAll('.', '').replaceAll(',', '.'))
         form.submit();
     }
 });
@@ -23,8 +24,9 @@ function validarCampos(...campos)
 {
     let status = true;
     const corrigeNumero = function(valor) {
+        valor = Number(valor.replaceAll('.', '').replaceAll(',', '.'));
         console.log(valor)
-        return Number(valor.replaceAll('.', '').replaceAll(',', '.'));
+        return;
     }
 
     campos.forEach(campo => {
