@@ -17,20 +17,21 @@ form.addEventListener('submit', () => {
 
     if (validarCampos(inputMarca, inputModelo, inputAno, inputPreco, inputCor, inputDescricao)) {
         // cadastra o veículo
-        const listaDeCarros = JSON.parse(localStorage.getItem('listaCarrosStorage')) ?? [];
-        const carro = {
-            marca: inputMarca.value,
-            modelo: inputModelo.value,
-            ano: inputAno.value,
-            preco: inputPreco.value,
-            cor: inputCor.value,
-            foto: inputFoto.value,
-            descricao: inputDescricao.value
-        }
-        listaDeCarros.push(carro);
-        localStorage.setItem('listaCarrosStorage', JSON.stringify(listaDeCarros));
-        alert('Carro cadastrado com sucesso!');
-        form.reset();
+        // const listaDeCarros = JSON.parse(localStorage.getItem('listaCarrosStorage')) ?? [];
+        // const carro = {
+        //     marca: inputMarca.value,
+        //     modelo: inputModelo.value,
+        //     ano: inputAno.value,
+        //     preco: inputPreco.value,
+        //     cor: inputCor.value,
+        //     foto: inputFoto.value,
+        //     descricao: inputDescricao.value
+        // }
+        // listaDeCarros.push(carro);
+        // localStorage.setItem('listaCarrosStorage', JSON.stringify(listaDeCarros));
+        // alert('Carro cadastrado com sucesso!');
+        inputPreco.value = Number(inputPreco.value.replaceAll('.', '').replaceAll(',', '.'));
+        form.submit();
     }
 });
 

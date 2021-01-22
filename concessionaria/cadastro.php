@@ -67,7 +67,7 @@
                 <div class="alert-danger w-100 p-2 d-none">Descrição é obrigatório</div>
             </div>
             <div class="form-group col-md-12 text-right">
-                <button class="btn btn-primary">
+                <button type="submit" class="btn btn-primary">
                     Cadastrar Veículo
                 </button>
                 <button type="reset" class="btn btn-secondary">

@@ -15,7 +15,7 @@ form.addEventListener('submit', () => {
     const inputDescricao = form.querySelector('#descricao');
 
     if (validarCampos(inputMarca, inputModelo, inputAno, inputPreco, inputCor, inputDescricao)) {
-        inputPreco.value = Number(inputPreco.value.replaceAll('.', '').replaceAll(',', '.'))
+        inputPreco.value = Number(inputPreco.value.replaceAll('.', '').replaceAll(',', '.'));
         form.submit();
     }
 });
@@ -24,9 +24,7 @@ function validarCampos(...campos)
 {
     let status = true;
     const corrigeNumero = function(valor) {
-        valor = Number(valor.replaceAll('.', '').replaceAll(',', '.'));
-        console.log(valor)
-        return;
+        return Number(valor.replaceAll('.', '').replaceAll(',', '.'));
     }
 
     campos.forEach(campo => {
