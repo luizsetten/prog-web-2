@@ -42,13 +42,13 @@
                 // echo '</pre>';
                 $id = $linha['id'];
                 $marca = $linha['marca'];
-                $preco = $linha['preco'] / 100;
+                $preco = $linha['preco'];
                 $cor = $linha['cor'];
                 $descricao = $linha['descricao'];
                 $modelo = $linha['modelo'];
                 $foto = $linha['foto'];
                 $ano = $linha['ano'];
-                print($preco);
+                // print($preco);
             ?>
                 <div class="card p-2 my-3">
                     <div class="row">
