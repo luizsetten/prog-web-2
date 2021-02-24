@@ -19,7 +19,7 @@
         <?php
         include "navbar.php";
         ?>
-        <form id="formVeiculo" method="POST" action="./utils/store.php" class="row">
+        <form id="formVeiculo" method="POST" action="./utils/store.php" class="row" enctype="multipart/form-data">
             <div class="form-group col-md-6">
                 <label>Marca:</label>
                 <select id="marca" name="marca" class="form-control custom-select">
@@ -47,7 +47,9 @@
             </div>
             <div class="form-group col-md-6">
                 <label>Foto:</label>
-                <input type="text" id="foto" name="foto" class="form-control" value="" placeholder="Insira o nome da foto">
+                <!-- <input type="text" id="foto" name="foto" class="form-control" value="" placeholder="Insira o nome da foto"> -->
+                <input type="file" id="foto" name="foto" class="form-control" accept="image/x-png,image/jpeg" />
+
             </div>
             <div class="form-group col-md-6">
                 <label>Cor:</label>

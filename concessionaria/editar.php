@@ -40,7 +40,7 @@
 
         ?>
 
-        <form id="formVeiculo" method="POST" action="utils/update.php" class="row">
+        <form id="formVeiculo" method="POST" action="utils/update.php" class="row" enctype="multipart/form-data">
             <input type="hidden" name="id" id="id" value=<?= $teste->id ?>>
             <div class="form-group col-md-6">
                 <label>Marca:</label>
@@ -69,7 +69,8 @@
             </div>
             <div class="form-group col-md-6">
                 <label>Foto:</label>
-                <input type="text" name="foto" id="foto" class="form-control" value="<?= $teste->foto ?>" placeholder="Insira o nome da foto">
+                <!-- <input type="text" name="foto" id="foto" class="form-control" value="<?= $teste->foto ?>" placeholder="Insira o nome da foto"> -->
+                <input type="file" id="foto" name="foto" class="form-control" accept="image/x-png,image/jpeg" />
             </div>
             <div class="form-group col-md-6">
                 <label>Cor:</label>
