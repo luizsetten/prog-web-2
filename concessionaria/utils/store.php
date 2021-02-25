@@ -14,25 +14,20 @@ $preco = $_POST['preco'];
 $cor = $_POST['cor'];
 $descricao = $_POST['descricao'];
 $imagem = $_FILES['foto'];
-// print "<pre>";
-// print_r($imagem);
-// print "</pre>";
 if ($imagem != NULL) {
-  $nomeFinal = 'uploads/' . time() . '.jpg';
+  $nomeFinal = '../uploads/' . time() . '.jpg';
   if (move_uploaded_file($imagem['tmp_name'], $nomeFinal)) {
     $tamanhoImg = filesize($nomeFinal);
-    $foto2 = addslashes(fread(fopen($nomeFinal, "r"), $tamanhoImg));
-    print "<pre>";
-    print_r($foto2);
-    print "</pre>";
-    $query = sprintf("INSERT INTO carros (marca, modelo, ano, preco, cor, descricao, foto) VALUES (\"{$marca}\", \"{$modelo}\", {$ano}, {$preco}, \"{$cor}\", \"{$descricao}\", \"{$foto2}\")");
-    $updated = mysqli_query($con, $query) or die(mysqli_error($con));
+    $imgContent = addslashes(file_get_contents($nomeFinal));
+
+    $query = $con->query("INSERT INTO carros (marca, modelo, ano, preco, cor, descricao, foto) VALUES ('$marca', '$modelo', {$ano}, {$preco}, '$cor', '$descricao', '$imgContent')");
+    print($query);
   }
 } else {
   echo "Você não realizou o upload de forma satisfatória.";
+  return;
 }
-print($updated);
 
-header("Location: ../listagem.php");
+// header("Location: ../listagem.php");
 die();
 ?>
