@@ -3,12 +3,35 @@
 <?php
 if (isset($_POST['id']) && !empty($_POST['id'])) {
         $idUpdate = $_POST['id'];
-        print($_POST['preco']);
-        // $preco = floatval($_POST['preco']);
+        $marca = $_POST['marca'];
+        $modelo = $_POST['modelo'];
+        $ano = $_POST['ano'];
+        $preco = $_POST['preco'];
+        $cor = $_POST['cor'];
+        $descricao = $_POST['descricao'];
+        $imagem = $_FILES['foto'];
 
-        $queryUpdate = sprintf("UPDATE carros SET marca=\"{$_POST['marca']}\", modelo=\"{$_POST['modelo']}\", ano=\"{$_POST['ano']}\", preco=\"{$_POST['preco']}\", cor=\"{$_POST['cor']}\", descricao=\"{$_POST['descricao']}\", foto=\"{$_POST['foto']}\"  WHERE id=$idUpdate");
-        $updated = mysqli_query($con, $queryUpdate) or die(mysqli_error($con));
+        if (isset($_FILES['foto']) && !empty($_FILES['foto'])) {
+                $nomeFinal = '../uploads/' . time() . '.jpg';
+                // if (move_uploaded_file($imagem['tmp_name'], $nomeFinal)) {
+                //         $tamanhoImg = filesize($nomeFinal);
+                //         $imgContent = addslashes(file_get_contents($nomeFinal));
+
+                //         $query = $con->query("UPDATE carros (marca, modelo, ano, preco, cor, descricao, foto) VALUES ('$marca', '$modelo', {$ano}, {$preco}, '$cor', '$descricao', '$imgContent') WHERE id=$idUpdate");
+                //         print($query);
+                // }
+                if (move_uploaded_file($imagem['tmp_name'], $nomeFinal)) {
+                        $tamanhoImg = filesize($nomeFinal);
+                        $imgContent = addslashes(file_get_contents($nomeFinal));
+
+                        $query = $con->query("INSERT INTO carros (marca, modelo, ano, preco, cor, descricao, foto) VALUES ('$marca', '$modelo', {$ano}, {$preco}, '$cor', '$descricao', '$imgContent')");
+                        print($query);
+                }
+        } else {
+                $queryUpdate = sprintf("UPDATE carros SET marca=\"{$_POST['marca']}\", modelo=\"{$_POST['modelo']}\", ano=\"{$_POST['ano']}\", preco=\"{$_POST['preco']}\", cor=\"{$_POST['cor']}\", descricao=\"{$_POST['descricao']}\"  WHERE id=$idUpdate");
+                $updated = mysqli_query($con, $queryUpdate) or die(mysqli_error($con));
+        }
 }
-header("Location: ../listagem.php");
+// header("Location: ../listagem.php");
 die();
 ?>

@@ -52,7 +52,7 @@
                 <div class="card p-2 my-3">
                     <div class="row">
                         <div class="col-md-3">
-                            <img src="<?= $foto ?>" class="img-thumbnail img-fluid">
+                            <img src="<?= 'data:image/jpeg;base64,' . base64_encode($foto) ?>" class="img-thumbnail img-fluid">
                         </div>
                         <div class="col-md-9 p-3">
                             <h3><?php print($modelo) ?></h3>

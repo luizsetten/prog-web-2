@@ -69,8 +69,8 @@
             </div>
             <div class="form-group col-md-6">
                 <label>Foto:</label>
-                <!-- <input type="text" name="foto" id="foto" class="form-control" value="<?= $teste->foto ?>" placeholder="Insira o nome da foto"> -->
                 <input type="file" id="foto" name="foto" class="form-control" accept="image/x-png,image/jpeg" />
+                <img src="<?= 'data:image/jpeg;base64,' . base64_encode($teste->foto) ?>" class="img-thumbnail img-fluid">
             </div>
             <div class="form-group col-md-6">
                 <label>Cor:</label>
