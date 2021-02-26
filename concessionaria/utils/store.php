@@ -10,7 +10,6 @@ $marca = $_POST['marca'];
 $modelo = $_POST['modelo'];
 $ano = $_POST['ano'];
 $preco = $_POST['preco'];
-// $foto = $_POST['foto'];
 $cor = $_POST['cor'];
 $descricao = $_POST['descricao'];
 $imagem = $_FILES['foto'];
@@ -28,6 +27,6 @@ if ($imagem != NULL) {
   return;
 }
 
-// header("Location: ../listagem.php");
+header("Location: ../listagem.php");
 die();
 ?>
