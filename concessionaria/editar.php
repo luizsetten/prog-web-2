@@ -26,66 +26,57 @@
 
     <?php
     $id = $_POST['id'];
-    // echo $id;
     $query = sprintf("SELECT * FROM carros WHERE id=$id");
     $dados = mysqli_query($con, $query) or die(mysqli_error($con));
-    // echo '<pre>';
-    // print_r($dados);
-    // echo '</pre>';
-    $teste = mysqli_fetch_object($dados);
-    // echo '<pre>';
-    // print_r($teste);
-    // echo '</pre>';
-    // echo $teste->preco;
-
+    $objeto = mysqli_fetch_object($dados);
     ?>
 
-    <form id="formVeiculo" method="POST" action="utils/update.php" class="row" enctype="multipart/form-data">
-      <input type="hidden" name="id" id="id" value=<?= $teste->id ?>>
+    <form id="formVeiculo" method="POST" action="utils/update.php" class="row" enctype="multipart/form-objeto">
+      <input type="hidden" name="id" id="id" value=<?= $objeto->id ?>>
       <div class="form-group col-md-6">
         <label>Marca:</label>
         <select name="marca" id="marca" class="form-control custom-select">
           <option value="">-- Selecionar --</option>
-          <option value="Chevrolet" <?= $teste->marca == 'Chevrolet' ? ' selected="selected"' : ''; ?>>Chevrolet</option>
-          <option value="Ford" <?= $teste->marca == 'Ford' ? ' selected="selected"' : ''; ?>>Ford</option>
-          <option value="Hyundai" <?= $teste->marca == 'Hyundai' ? ' selected="selected"' : ''; ?>>Hyundai</option>
+          <option value="Chevrolet" <?= $objeto->marca == 'Chevrolet' ? ' selected="selected"' : ''; ?>>Chevrolet</option>
+          <option value="Ford" <?= $objeto->marca == 'Ford' ? ' selected="selected"' : ''; ?>>Ford</option>
+          <option value="Hyundai" <?= $objeto->marca == 'Hyundai' ? ' selected="selected"' : ''; ?>>Hyundai</option>
         </select>
         <div class="alert-danger w-100 p-2 d-none">Marca é obrigatório</div>
       </div>
       <div class="form-group col-md-6">
         <label>Modelo:</label>
-        <input type="text" name="modelo" id="modelo" class="form-control" value="<?= $teste->modelo ?>" placeholder="Insira o nome do modelo">
+        <input type="text" name="modelo" id="modelo" class="form-control" value="<?= $objeto->modelo ?>" placeholder="Insira o nome do modelo">
         <div class="alert-danger w-100 p-2 d-none">Modelo inválido</div>
       </div>
       <div class="form-group col-md-6">
         <label>Ano:</label>
-        <input type="number" name="ano" id="ano" class="form-control" value="<?= $teste->ano ?>" placeholder="Insira o ano do modelo">
+        <input type="number" name="ano" id="ano" class="form-control" value="<?= $objeto->ano ?>" placeholder="Insira o ano do modelo">
         <div class="alert-danger w-100 p-2 d-none">Ano inválido</div>
       </div>
       <div class="form-group col-md-6">
         <label>Preço:</label>
-        <input type="text" step="0.01" name="preco" id="preco" class="form-control" value="<?= floatval($teste->preco) ?>" placeholder="Insira o preço do modelo">
+        <input type="text" step="0.01" name="preco" id="preco" class="form-control" value="<?= floatval($objeto->preco) ?>" placeholder="Insira o preço do modelo">
         <div class="alert-danger w-100 p-2 d-none">Preço inválido</div>
       </div>
       <div class="form-group col-md-6">
         <label>Foto:</label>
         <input type="file" id="foto" name="foto" class="form-control" accept="image/x-png,image/jpeg" />
-        <img src="<?= 'data:image/jpeg;base64,' . base64_encode($teste->foto) ?>" class="img-thumbnail img-fluid">
+        <img src="<?= 'objeto:image/jpeg;base64,' . base64_encode($objeto->foto) ?>" class="img-thumbnail img-fluid">
       </div>
       <div class="form-group col-md-6">
         <label>Cor:</label>
         <select name="cor" id="cor" class="form-control custom-select">
           <option value="">-- Selecionar --</option>
-          <option value="Preto" <?= $teste->cor == 'Preto' ? ' selected="selected"' : ''; ?>>Preto</option>
-          <option value="Branco" <?= $teste->cor == 'Branco' ? ' selected="selected"' : ''; ?>>Branco</option>
-          <option value="Prata" <?= $teste->cor == 'Prata' ? ' selected="selected"' : ''; ?>>Prata</option>
-          <option value="Vermelho" <?= $teste->cor == 'Vermelho' ? ' selected="selected"' : ''; ?>>Vermelho</option>
+          <option value="Preto" <?= $objeto->cor == 'Preto' ? ' selected="selected"' : ''; ?>>Preto</option>
+          <option value="Branco" <?= $objeto->cor == 'Branco' ? ' selected="selected"' : ''; ?>>Branco</option>
+          <option value="Prata" <?= $objeto->cor == 'Prata' ? ' selected="selected"' : ''; ?>>Prata</option>
+          <option value="Vermelho" <?= $objeto->cor == 'Vermelho' ? ' selected="selected"' : ''; ?>>Vermelho</option>
         </select>
         <div class="alert-danger w-100 p-2 d-none">Cor é obrigatório</div>
       </div>
       <div class="form-group col-md-12">
         <label>Descrição:</label>
-        <textarea class="form-control" name="descricao" id="descricao" rows="10" placeholder="Insira a descrição do veículo"><?= $teste->descricao ?></textarea>
+        <textarea class="form-control" name="descricao" id="descricao" rows="10" placeholder="Insira a descrição do veículo"><?= $objeto->descricao ?></textarea>
         <div class="alert-danger w-100 p-2 d-none">Descrição é obrigatório</div>
       </div>
       <div class="form-group col-md-12 text-right">
