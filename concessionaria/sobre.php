@@ -36,7 +36,7 @@
         <p>Atualmente estou estudando: Elixir e também estou aprofundando meus conhecimentos de inglês.</p>
       </div>
       <div class="card-body p-3">
-        <img src="https://placehold.it/200x200" class="img-thumbnail float-left mr-3">
+      <img src="./images/pedro.jpg" class="img-thumbnail float-left mr-3" style="width: 200px; height: 200px;">
         <p>
           <strong>Nome:</strong> Pedro Henrique Borges Prado <br>
           <strong>E-mail:</strong> pedro.prado@ifsuldeminas.edu.br<br>
@@ -44,9 +44,9 @@
           <strong>Período:</strong> 8°Período
         </p>
         <strong>MINICURRÍCULO:</strong>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis error fugiat nemo veritatis id qui ea repellat quia magni similique cumque voluptates quo perferendis, nulla illo obcaecati ut fuga quibusdam.</p>
-        <p>Odio repudiandae ab explicabo provident! Ullam ea repudiandae nam a commodi error, fuga non earum magnam saepe nesciunt excepturi, temporibus repellendus minus! Rem iste asperiores, dicta facere nisi temporibus esse!</p>
-        <p>Est molestiae eveniet minus sunt dolorum obcaecati harum porro delectus voluptate. Consectetur officia minima nemo vel, itaque ipsam laboriosam! Atque, suscipit. Blanditiis, qui corrupti! Eos minus cum amet officiis rerum.</p>
+        <p>Aluno do IFSULDEMINAS - Campus poços de Caldas e técnico em hardware pela Microcamp.</p>
+        <p>Tenho conhecimentos em: Node.js, ReactJS, React Native, Git, Kotlin e Scrum.</p>
+        <p>Atualmente estou estudando:  Kotlin, uma linguagem de programação multiplataforma derivada do Java.</p>
       </div>
     </section>
 

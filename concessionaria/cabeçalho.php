@@ -1,3 +1,3 @@
-<div class="jumbotron mb-3">
-  <h1>Logo da Concessionária</h1>
+<div class="jumbotron mb-3 bg-transparent text-dark">
+  <img src="./images/logo.png" class="img-fluid">
 </div>
