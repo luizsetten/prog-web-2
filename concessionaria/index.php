@@ -20,7 +20,11 @@
         <h2>Bem-vindo(a) à nossa concessionária!</h2>
       </header>
       <div class="card-body p-3">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem maiores laudantium facilis, rerum consequuntur minima possimus eum quod harum officia vitae voluptatem enim suscipit atque, earum ex sit dolorum illo!</p>
+        <p>Estamos prontos para te receber e realizar o seu sonho do carro próprio!</p>
+        <p>Horário de funcionamento:</p>
+        <p>seg. à sex. - 10h às 18h</p>
+        <p>sábados - 12h às 16h</p>
+        <p>Endereço: Rua Pacaembu, 658 - Piracicaba, SP | Contato: (19) 3434-5522 | WhatsApp: (19) 99888-5522</p>
       </div>
     </section>
 
