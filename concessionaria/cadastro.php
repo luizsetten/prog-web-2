@@ -49,7 +49,7 @@
                 <label>Foto:</label>
                 <!-- <input type="text" id="foto" name="foto" class="form-control" value="" placeholder="Insira o nome da foto"> -->
                 <input type="file" id="foto" name="foto" class="form-control" accept="image/x-png,image/jpeg" />
-
+                <div class="alert-danger w-100 p-2 d-none">Foto é obrigatório</div>
             </div>
             <div class="form-group col-md-6">
                 <label>Cor:</label>

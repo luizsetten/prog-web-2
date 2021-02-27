@@ -55,15 +55,15 @@
                             <img src="<?= 'data:image/jpeg;base64,' . base64_encode($foto) ?>" class="img-thumbnail img-fluid">
                         </div>
                         <div class="col-md-9 p-3">
-                            <h3><?php print($modelo) ?></h3>
+                            <h3><?= $modelo ?></h3>
                             <p>
-                                <strong>Marca:</strong> <?php print($marca); ?><br>
-                                <strong>Ano:</strong> <?php print($ano); ?><br>
-                                <strong>Preço:</strong> R$<?php echo number_format($preco, 2, ",", "."); ?><br>
-                                <strong>Cor:</strong> <?php print($cor); ?>
+                                <strong>Marca:</strong> <?= $marca ?><br>
+                                <strong>Ano:</strong> <?= $ano ?><br>
+                                <strong>Preço:</strong> R$<?php echo number_format($preco, 2, ',', '.'); ?><br>
+                                <strong>Cor:</strong> <?= $cor ?>
                             </p>
                             <p>
-                                <?php print($descricao); ?>
+                                <?= $descricao ?>
                             </p>
                             <div class="row justify-content-end">
                                 <div class="col-xs">

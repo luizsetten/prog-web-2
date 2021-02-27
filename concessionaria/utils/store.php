@@ -20,7 +20,8 @@ if ($imagem != NULL) {
     $imgContent = addslashes(file_get_contents($nomeFinal));
 
     $query = $con->query("INSERT INTO carros (marca, modelo, ano, preco, cor, descricao, foto) VALUES ('$marca', '$modelo', {$ano}, {$preco}, '$cor', '$descricao', '$imgContent')");
-    print($query);
+  } else {
+    $query = $con->query("INSERT INTO carros (marca, modelo, ano, preco, cor, descricao) VALUES ('$marca', '$modelo', {$ano}, {$preco}, '$cor', '$descricao')");
   }
 } else {
   echo "Você não realizou o upload de forma satisfatória.";

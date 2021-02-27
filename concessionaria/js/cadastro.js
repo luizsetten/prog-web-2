@@ -15,7 +15,7 @@ form.addEventListener('submit', () => {
     const inputFoto = form.querySelector('#foto');
     const inputDescricao = form.querySelector('#descricao');
 
-    if (validarCampos(inputMarca, inputModelo, inputAno, inputPreco, inputCor, inputDescricao)) {
+    if (validarCampos(inputMarca, inputModelo, inputAno, inputPreco, inputCor, inputDescricao, inputFoto)) {
         // cadastra o veículo
         // const listaDeCarros = JSON.parse(localStorage.getItem('listaCarrosStorage')) ?? [];
         // const carro = {
@@ -43,10 +43,12 @@ function validarCampos(...campos)
     }
 
     campos.forEach(campo => {
+        console.log(campo)
         if (
             campo.value.length <= 1 ||
             campo.id == 'ano' && campo.value < 1900 ||
             campo.id == 'preco' && corrigeNumero(campo.value) > 100000000
+            || campo.id == 'foto' && campo.files.length === 0
         ) {
             campo.nextElementSibling.classList.remove('d-none');
             status = false;
