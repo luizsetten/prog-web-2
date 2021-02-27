@@ -14,7 +14,7 @@ $cor = $_POST['cor'];
 $descricao = $_POST['descricao'];
 $imagem = $_FILES['foto'];
 if ($imagem != NULL) {
-  $nomeFinal = '../uploads/' . time() . '.jpg';
+  $nomeFinal = '../tmp/' . time() . '.jpg';
   if (move_uploaded_file($imagem['tmp_name'], $nomeFinal)) {
     $tamanhoImg = filesize($nomeFinal);
     $imgContent = addslashes(file_get_contents($nomeFinal));
